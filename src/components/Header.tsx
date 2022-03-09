@@ -1,11 +1,15 @@
 import React from "react";
-
-const Header = () => {
+interface HeaderProps {
+  attemptsRemaining: number;
+  level: number;
+}
+const Header = (props: HeaderProps) => {
+  const { attemptsRemaining, level } = props;
   return (
     <header>
       <h1>Welcome to ROBCO Industries (TM) Termlink</h1>
-      <p>Password Required</p>
-      <p>Attempts Remaing: ⬜️ ⬜️ ⬜️ ⬜️</p>
+      <p>Password Required for level {level}</p>
+      <p>Attempts Remaing: {Array(attemptsRemaining).fill(`⬜️ `).join("")}</p>
     </header>
   );
 };
