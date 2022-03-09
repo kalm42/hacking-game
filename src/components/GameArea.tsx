@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { randomNumber } from "../lib/random-number";
 import GamePad from "./GamePad";
-import Line from "./Line";
 
 interface GameAreaProps {
   level: number;

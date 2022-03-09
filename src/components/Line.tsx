@@ -33,7 +33,7 @@ const Line = (props: LineProps) => {
           <span>
             {text.substring(0, firstWordEndsAt)}
             <span
-              className="hover:text-green-500"
+              className="hover:text-green-500 cursor-pointer"
               onClick={() => handleAttempt(word || "")}
             >
               {word?.toUpperCase()}

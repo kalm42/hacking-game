@@ -46,7 +46,11 @@ function App() {
     <div className="container m-auto max-h-screen">
       <Header attemptsRemaining={attemptsRemaining} level={level} />
       <main className="grid grid-cols-12">
-        <GameArea level={level} words={words} handleAttempt={handleAttempt} />
+        {attemptsRemaining > 0 ? (
+          <GameArea level={level} words={words} handleAttempt={handleAttempt} />
+        ) : (
+          <p className="col-span-10">Game Over</p>
+        )}
         <Record records={record} />
       </main>
     </div>

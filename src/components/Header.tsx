@@ -8,7 +8,7 @@ const Header = (props: HeaderProps) => {
   return (
     <header>
       <h1>Welcome to ROBCO Industries (TM) Termlink</h1>
-      <p>Password Required for level {level}</p>
+      <p>Password Required: Level {level}</p>
       <p>Attempts Remaing: {Array(attemptsRemaining).fill(`⬜️ `).join("")}</p>
     </header>
   );
