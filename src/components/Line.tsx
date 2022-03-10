@@ -10,7 +10,6 @@ const Line = (props: LineProps) => {
   const { text, hasWord, word, handleAttempt } = props;
   const [clicked, setClicked] = useState(false);
   const [replacedWord, setReplacedWord] = useState<string>(word || "");
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const replacedWordRef = useRef<string>("");
   const requestRef = useRef<number>();
   const numberOfSteps = useRef(0);
