@@ -67,7 +67,7 @@ const GameArea = (props: GameAreaProps) => {
 
   //   game grid is 12 x 32 or 384 characters long
   return (
-    <div className="col-span-8 sm:col-span-9 flex flex-wrap">
+    <div className="col-span-8 sm:col-span-9 md:col-span-10 flex flex-wrap">
       <GamePad
         gibberish={randomGibberish}
         handleAttempt={handleAttempt}
