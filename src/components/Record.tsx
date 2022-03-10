@@ -1,22 +1,37 @@
+import React, { useEffect, useRef, useState } from "react";
 import { Attempt } from "../lib/types";
 import Attemptings from "./Attemptings";
 
 interface RecordProps {
-  records: Attempt[];
+  record: Attempt;
 }
+
 const Record = (props: RecordProps) => {
+  const { record } = props;
+  const [show, setShow] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    timeoutRef.current = setTimeout(() => {
+      setShow(true);
+    }, 700);
+    return () => {
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="col-span-2">
-      {props.records.map((record) => {
-        return (
-          <div key={record.word}>
-            <Attemptings word={record.word} />
-            <p>
-              &gt; Match=<span>{record.likeness}</span>
-            </p>
-          </div>
-        );
-      })}
+    <div>
+      <Attemptings word={record.word} />
+      <p>
+        {show && (
+          <>
+            &gt; Match = <span>{record.likeness}</span>
+          </>
+        )}
+      </p>
     </div>
   );
 };

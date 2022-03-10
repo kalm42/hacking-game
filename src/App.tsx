@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import Header from "./components/Header";
 import GameArea from "./components/GameArea";
-import Record from "./components/Record";
+import Records from "./components/Records";
 import { randomNumber } from "./lib/random-number";
 import Four from "./lib/four-letter-words.json";
 import { Attempt } from "./lib/types";
@@ -43,7 +43,7 @@ function App() {
   };
 
   return (
-    <div className="container m-auto max-h-screen">
+    <div className="container m-auto max-h-screen p-4">
       <Header attemptsRemaining={attemptsRemaining} level={level} />
       <main className="grid grid-cols-12">
         {attemptsRemaining > 0 ? (
@@ -51,7 +51,7 @@ function App() {
         ) : (
           <p className="col-span-10">Game Over</p>
         )}
-        <Record records={record} />
+        <Records records={record} />
       </main>
     </div>
   );
