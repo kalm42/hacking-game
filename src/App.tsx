@@ -6,6 +6,7 @@ import { randomNumber } from "./lib/random-number";
 import Four from "./lib/four-letter-words.json";
 import { Attempt } from "./lib/types";
 import match from "./lib/match";
+import GameOver from "./components/GameOver";
 
 function App() {
   const [level, setLevel] = useState(1);
@@ -49,7 +50,7 @@ function App() {
         {attemptsRemaining > 0 ? (
           <GameArea level={level} words={words} handleAttempt={handleAttempt} />
         ) : (
-          <p className="col-span-10">Game Over</p>
+          <GameOver level={level} />
         )}
         <Records records={record} />
       </main>
